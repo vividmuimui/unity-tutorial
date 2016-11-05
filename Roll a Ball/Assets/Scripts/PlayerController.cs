@@ -22,4 +22,16 @@ public class PlayerController : MonoBehaviour {
 		
 		rb.AddForce(movoment * speed);
 	}
+
+	/// <summary>
+	/// OnTriggerEnter is called when the Collider other enters the trigger.
+	/// </summary>
+	/// <param name="other">The other Collider involved in this collision.</param>
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag("PickUp"))
+		{
+			other.gameObject.SetActive(false);
+		}
+	}
 }
