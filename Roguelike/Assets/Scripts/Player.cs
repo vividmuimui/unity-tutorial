@@ -46,7 +46,7 @@ public class Player : MovingObject {
 		GameManager.instance.playersTurn = false;
 	}
 
-	private void OnTriggerEnter2D(Collider2D other)
+	private void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.tag == "Exit")
 		{
@@ -69,7 +69,7 @@ public class Player : MovingObject {
 	{
 		Wall hitwall = component as Wall;
 		hitwall.DamageWall(wallDamage);
-		animator.SetTrigger("PlayerChop");
+		animator.SetTrigger("playerChop");
 	}
 
 	private void Restart()
@@ -79,7 +79,7 @@ public class Player : MovingObject {
 
 	public void LoseFood(int loss)
 	{
-		animator.SetTrigger("PlayerHit");
+		animator.SetTrigger("playerHit");
 		food -= loss;
 		CheckIfGameOver();
 	}
