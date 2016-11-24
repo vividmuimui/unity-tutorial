@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Enemy : MovingObject {
 	public int playerDamage;
+	public AudioClip enemyAttack1;
+	public AudioClip enemyAttack2;
 
 	Animator animator;
 	Transform target;
@@ -48,5 +50,6 @@ public class Enemy : MovingObject {
 		Player hitPlayer = component as Player;
 		animator.SetTrigger("enemyAttack");
 		hitPlayer.LoseFood(playerDamage);
+		SoundManager.instance.RandomizeSfx(enemyAttack1, enemyAttack2);
 	}
 }
