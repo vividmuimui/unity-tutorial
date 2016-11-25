@@ -20,3 +20,7 @@ https://unity3d.com/jp/learn/tutorials/projects/tanks-tutorial
 ### Roguelike
 
 https://unity3d.com/jp/learn/tutorials/projects/2d-roguelike-tutorial
+
+### Shop UI
+
+https://unity3d.com/jp/learn/tutorials/topics/user-interface-ui/intro-and-setup
