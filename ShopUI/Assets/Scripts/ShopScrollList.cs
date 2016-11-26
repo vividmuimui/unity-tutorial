@@ -16,7 +16,7 @@ public class ShopScrollList : MonoBehaviour {
 	public Transform contentPanel;
 	public ShopScrollList otherShop;
 	public Text myGoldDisplay;
-	public SimpleObjectPool ButtonObjectPool;
+	public SimpleObjectPool buttonObjectPool;
 	public float gold = 20f;
 
 	void Start () {
@@ -33,8 +33,9 @@ public class ShopScrollList : MonoBehaviour {
 		for(int i = 0; i < itemList.Count; i++)
 		{
 			Item item = itemList[i];
-			GameObject newButton = ButtonObjectPool.GetObject();
+			GameObject newButton = buttonObjectPool.GetObject();
 			newButton.transform.SetParent(contentPanel);
+			newButton.transform.localScale = new Vector3(1f, 1f, 1f);
 			
 			SimpleButton simpleButton = newButton.GetComponent<SimpleButton>();
 			simpleButton.Setup(item, this);
