@@ -1,19 +1,33 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class SimpleButton : MonoBehaviour {
-	public Button button;
-	public Text nameLabel;
-	public Text priceLabel;
-	public Image iconImage;
-
-	void Start () 
-	{
-	
-	}
-
-	public void Setup()
-	{
-		
-	}
+    
+    public Button buttonComponent;
+    public Text nameLabel;
+    public Image iconImage;
+    public Text priceText;
+    
+    private Item item;
+    private ShopScrollList scrollList;
+    
+    void Start () 
+    {
+        // buttonComponent.onClick.AddListener (HandleClick);
+    }
+    
+    public void Setup(Item currentItem, ShopScrollList currentScrollList)
+    {
+        item = currentItem;
+        nameLabel.text = item.itemName;
+        iconImage.sprite = item.icon;
+        priceText.text = item.price.ToString ();
+        scrollList = currentScrollList;
+    }
+    
+    // public void HandleClick()
+    // {
+    //     scrollList.TryTransferItemToOtherShop (item);
+    // }
 }

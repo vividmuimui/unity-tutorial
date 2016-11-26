@@ -20,7 +20,12 @@ public class ShopScrollList : MonoBehaviour {
 	public float gold = 20f;
 
 	void Start () {
-	
+		RefreshDisplay();
+	}
+
+	private void RefreshDisplay()
+	{
+		AddButton();
 	}
 	
 	private void AddButton()
@@ -29,6 +34,10 @@ public class ShopScrollList : MonoBehaviour {
 		{
 			Item item = itemList[i];
 			GameObject newButton = ButtonObjectPool.GetObject();
+			newButton.transform.SetParent(contentPanel);
+			
+			SimpleButton simpleButton = newButton.GetComponent<SimpleButton>();
+			simpleButton.Setup(item, this);
 		}
 	}
 }
