@@ -53,7 +53,7 @@ public class ShopScrollList : MonoBehaviour {
 		}
 	}
 
-	public void TryTransferItemToOhterShop(Item item)
+	public void TryTransferItemToOtherShop(Item item)
 	{
 		if(otherShop.gold >= item.price)
 		{

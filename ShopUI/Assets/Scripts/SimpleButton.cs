@@ -14,7 +14,7 @@ public class SimpleButton : MonoBehaviour {
     
     void Start () 
     {
-        // buttonComponent.onClick.AddListener (HandleClick);
+        buttonComponent.onClick.AddListener (HandleClick);
     }
     
     public void Setup(Item currentItem, ShopScrollList currentScrollList)
@@ -26,8 +26,8 @@ public class SimpleButton : MonoBehaviour {
         scrollList = currentScrollList;
     }
     
-    // public void HandleClick()
-    // {
-    //     scrollList.TryTransferItemToOtherShop (item);
-    // }
+    public void HandleClick()
+    {
+        scrollList.TryTransferItemToOtherShop (item);
+    }
 }
